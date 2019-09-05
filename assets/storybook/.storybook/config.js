@@ -6,13 +6,13 @@ import { addDecorator, configure } from '@storybook/html';
 import { withA11y } from '@storybook/addon-a11y';
 
 import Twig from 'twig';
-import twigDrupal from 'twig-drupal-filters';
+import addDrupalFilters from 'twig-drupal-filters';
 
 // Import styles
 import '../styles.css';
 
 // Add the filters to Drupal.
-twigDrupal(Twig);
+addDrupalFilters(Twig);
 
 // Automatically import all files ending in *.stories.js
 const twig = require.context('../twig', true, /\.stories\.(ts|js)$/);
