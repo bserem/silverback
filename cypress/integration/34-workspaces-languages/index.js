@@ -3,8 +3,8 @@ import {viewPage} from "../common/page";
 import {workspaces, languages} from "../common/mappings";
 
 beforeEach(function () {
-  cy.drush('scr cypress/integration/jira/SLB/34-workspaces-languages/workspaces.php');
-  cy.drush('scr cypress/integration/jira/SLB/34-workspaces-languages/testpage.php');
+  cy.drush('scr ../vendor/amazeelabs/silverback/cypress/34-workspaces-languages/workspaces.php');
+  cy.drush('scr ../vendor/amazeelabs/silverback/cypress/34-workspaces-languages/testpage.php');
   cy.drupalSession({ user: "admin", toolbar: 'on' });
   cy.drush('cr');
 });

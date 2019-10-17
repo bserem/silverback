@@ -8,10 +8,10 @@ export const viewPage = function (workspace, title) {
 };
 
 export const createPage = function (workspace, title) {
-  cy.drush(`scr cypress/integration/jira/SLB/common/helpers/create-page.php -- "${title}" ${workspaces[workspace]} `);
+  cy.drush(`scr ../vendor/amazeelabs/silverback/cypress/common/helpers/create-page.php -- "${title}" ${workspaces[workspace]} `);
 };
 
 export const editPage = function (workspace, oldTitle, newTitle) {
-  cy.drush(`scr cypress/integration/jira/SLB/common/helpers/edit-page.php -- "${oldTitle}" ${workspaces[workspace]} "${newTitle}"`);
+  cy.drush(`scr ../vendor/amazeelabs/silverback/cypress/common/helpers/edit-page.php -- "${oldTitle}" ${workspaces[workspace]} "${newTitle}"`);
 };
 

@@ -3,11 +3,8 @@
 import {workspaces, languages} from "../common/mappings";
 
 beforeEach(function () {
-  cy.prepareSnapshot('workspaces-delivery', function () {
-    cy.drush('scr cypress/integration/jira/SLB/40-workspaces-delivery/background.php');
-    cy.drush('cr');
-  });
-  cy.drupalSession({ user: "admin" });
+  cy.drupalScript('features:integration/40-workspaces-delivery/background.php');
+  cy.drupalSession({user: 'admin'});
 });
 
 Given(/^an administrator is using the "([^"]*)" workspace$/, (workspace) => {

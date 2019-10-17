@@ -4,11 +4,7 @@ import {pages, workspaces} from "../common/mappings";
 import {viewPage, createPage, editPage} from "../common/page";
 
 beforeEach(function () {
-  cy.prepareSnapshot('workspaces', function () {
-    cy.drush('scr cypress/integration/jira/SLB/common/00-workspaces.php');
-    cy.drush('cr');
-  });
-  cy.drush('cr');
+    cy.drush('scr ../vendor/amazeelabs/silverback/cypress/common/00-workspaces.php');
 });
 
 
