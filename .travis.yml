@@ -40,7 +40,7 @@ install:
 - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
 - echo $BRANCH
 - composer require "amazeelabs/silverback:dev-$BRANCH"
-- cp $TRAVIS_BUILD_DIR/example.testing.services.yml web/sites/default/testing.services.yml
+- cp web/modules/contrib/cypress/example.testing.services.yml web/sites/default/testing.services.yml
 - cd web && ln -s ../vendor/amazeelabs/silverback/cypress features && cd ..
 - ./vendor/bin/silverback init
 - composer install
