@@ -8,10 +8,17 @@ export const viewPage = function (workspace, title) {
 };
 
 export const createPage = function (workspace, title) {
-  cy.drush(`scr ../vendor/amazeelabs/silverback/cypress/common/helpers/create-page.php -- "${title}" ${workspaces[workspace]} `);
+  cy.drupalScript(`silverback:integration/common/helpers/create-page.php`, {
+    title: title,
+    workspace: workspaces[workspace]
+  });
 };
 
 export const editPage = function (workspace, oldTitle, newTitle) {
-  cy.drush(`scr ../vendor/amazeelabs/silverback/cypress/common/helpers/edit-page.php -- "${oldTitle}" ${workspaces[workspace]} "${newTitle}"`);
+  cy.drupalScript(`silverback:integration/common/helpers/edit-page.php`, {
+    title: oldTitle,
+    workspace: workspaces[workspace],
+    newTitle: newTitle
+  });
 };
 

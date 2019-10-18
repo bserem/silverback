@@ -41,7 +41,8 @@ install:
 - echo $BRANCH
 - composer require "amazeelabs/silverback:dev-$BRANCH"
 - cp web/modules/contrib/cypress/example.testing.services.yml web/sites/default/testing.services.yml
-- cd web && ln -s ../vendor/amazeelabs/silverback/cypress features && cd ..
+- sed -i 's/features/silverback/g' web/sites/default/testing.services.yml
+- cd web && ln -s ../vendor/amazeelabs/silverback/cypress silverback && cd ..
 - ./vendor/bin/silverback init
 - composer install
 - source .envrc
@@ -49,8 +50,8 @@ install:
 
 script:
 - silverback download-tests
-- cp cypress/integration/jira/SLB/* web/features/integration
-- silverback-test
+- cp cypress/integration/jira/SLB/* web/silverback/integration
+- silverback-test silverback
 - cd $TRAVIS_BUILD_DIR/docs && npm run build
 - kill $(jobs -p) || true
 

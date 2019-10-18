@@ -2,7 +2,8 @@
 
 use Drupal\user\Entity\User;
 
-list($title, $workspace, $newTitle) = $extra;
+/** @var $args mixed */
+list($title, $workspace, $newTitle) = [$args->title, $args->workspace, $args->newTitle];
 
 /** @var \Drupal\workspaces\WorkspaceManagerInterface $workspacesManager */
 $workspacesManager = \Drupal::service('workspaces.manager');

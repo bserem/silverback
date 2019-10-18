@@ -3,7 +3,8 @@
 use Drupal\node\Entity\Node;
 use Drupal\user\Entity\User;
 
-list($title, $workspace) = $extra;
+/** @var $args mixed */
+list($title, $workspace) = [$args->title, $args->workspace];
 
 /** @var \Drupal\workspaces\WorkspaceManagerInterface $workspacesManager */
 $workspacesManager = \Drupal::service('workspaces.manager');

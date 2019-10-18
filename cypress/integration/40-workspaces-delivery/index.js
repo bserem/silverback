@@ -3,7 +3,7 @@
 import {workspaces, languages} from "../common/mappings";
 
 beforeEach(function () {
-  cy.drupalScript('features:integration/40-workspaces-delivery/background.php');
+  cy.drupalScript('silverback:integration/40-workspaces-delivery/background.php');
   cy.drupalSession({user: 'admin'});
 });
 
@@ -122,7 +122,7 @@ When(/^the user clicks the status label of delivery item "([^"]*)"$/, (item) => 
 });
 
 When(/^the user confirms to push this item to the target workspace$/, () => {
-  cy.get('input[value="Confirm"]').click();
+  cy.get('#delivery-push-changes > #edit-submit').click();
 });
 
 Then(/^the page "([^"]*)" should be available in the "([^"]*)" workspace$/, (title, workspace) => {

@@ -4,7 +4,7 @@ import {pages, workspaces} from "../common/mappings";
 import {viewPage, createPage, editPage} from "../common/page";
 
 beforeEach(function () {
-    cy.drush('scr ../vendor/amazeelabs/silverback/cypress/common/00-workspaces.php');
+  cy.drupalScript('silverback:integration/common/00-workspaces.php');
 });
 
 
