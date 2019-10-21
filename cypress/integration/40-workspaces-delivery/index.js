@@ -132,7 +132,7 @@ Then(/^the page "([^"]*)" should be available in the "([^"]*)" workspace$/, (tit
 });
 
 When(/^the user confirms to deliver this item to the target workspace$/, () => {
-  cy.get('input[value="Deliver content"]').click();
+  cy.get('input[value="Apply changes to Dev"]').click();
 });
 
 When(/^the user enters "([^"]*)" as a custom title$/, (title) => {
