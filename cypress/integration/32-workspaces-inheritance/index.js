@@ -23,6 +23,7 @@ Then(/^the user sees a "([^"]*)" error$/, (error) => {
 
 When(/^an administrator accesses the "([^"]*)" page of the "([^"]*)" workspace$/, (page, workspace) => {
   cy.drupalSession({user: "admin", workspace: workspaces[workspace]});
+  cy.visitDrupalke
   cy.visit(pages[page]);
 });
 
