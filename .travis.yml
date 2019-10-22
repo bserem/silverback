@@ -48,7 +48,7 @@ install:
 script:
 - silverback download-tests
 - cp cypress/integration/jira/SLB/* vendor/amazeelabs/silverback/cypress/integration
-- vendor/bin/drush cypress:list
+- vendor/bin/silverback setup && vendor/bin/drush en cypress -y- vendor/bin/drush cypress:list
 #- silverback-test silverback
 - cd $TRAVIS_BUILD_DIR/docs && npm run build
 - kill $(jobs -p) || true
