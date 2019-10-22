@@ -9,7 +9,7 @@ beforeEach(function () {
 
 
 Given(/^there is a page with title "([^"]*)" in the "([^"]*)" workspace$/, (title, workspace) => {
-  createPage(workspace, title);
+  cy.drupalScript(`silverback:integration/32-workspaces-inheritance/testpage-${workspaces[workspace]}.php`);
 });
 
 When(/^an administrator accesses the "([^"]*)" page in the "([^"]*)" workspace$/, (title, workspace) => {
@@ -31,7 +31,7 @@ Then(/^there should be no line for the page "([^"]*)"$/, (title) => {
 });
 
 Given(/^the title of "([^"]*)" has been changed to "([^"]*)" in the "([^"]*)" workspace$/, (oldTitle, newTitle, workspace) => {
-  editPage(workspace, oldTitle, newTitle)
+  cy.drupalScript(`silverback:integration/32-workspaces-inheritance/testpage-${workspaces[workspace]}.php`);
 });
 
 When(/^the user clicks the title of the "([^"]*)" row$/, (title) => {

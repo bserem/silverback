@@ -3,5 +3,9 @@
 
 // Automatic Drupal setup/teardown for tests.
 beforeEach(() => {
-  cy.drupalInstall('minimal', null, '../vendor/amazeelabs/silverback/config', '../vendor/amazeelabs/silverback/install-cache.zip');
+  cy.drupalInstall({
+    profile: 'minimal',
+    config: '../vendor/amazeelabs/silverback/config',
+    cache: '../vendor/amazeelabs/silverback/install-cache.zip'
+  });
 });
